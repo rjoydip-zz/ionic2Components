@@ -1,0 +1,19 @@
+<ion-content padding class="page-login form-content no-scroll">
+  <form [formGroup]="forgotForm" class="form" (ngSubmit)="onSubmit(forgotForm.value)">
+
+    <ion-item>
+      <ion-label floating color="primary">Email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+      <ion-label *ngIf="formErrors.email">
+        <div *ngFor="let errors of formErrors.email">
+          <p class="alert">{{ errors }}
+            <p>
+        </div>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button full type="submit" [disabled]="!forgotForm.valid">Login</button>
+    </ion-item>
+  </form>
+</ion-content>
