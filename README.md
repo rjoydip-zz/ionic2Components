@@ -45,7 +45,8 @@
 
 ## File / Folder description inside components
 
-```src -> app -> components -> auth -> data
+```
+src -> app -> components -> auth -> data
 ```
 
 Example: mock data of country list as array of object format
