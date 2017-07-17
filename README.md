@@ -116,4 +116,45 @@ Example: Requesting external service for here.
 
 ### Google+
 
-  1) 
+  Visit: https://developers.google.com/mobile/add?platform=android&cntapi=signin
+    i)    Give app name
+    ii)   Give Package name like (com.ionicframework.demo508795). You will find this package name from    config.xml under ```widget``` -> ``` id ```.
+    iii)  Generate Sha-1 from your pc cmd by using the follwing command.
+          Command: ``` keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android ```
+          Note: If keytool is not gobally install then go to ``` C:\Program Files\Java\jre1.8.0_91\bin ``` open command prompt and type above command.
+    iv)   copy sha-1  from cmd and put it there.
+    v)    Download GoogleService.json file and put it to your project folder.
+    vi)   open GoogleService-info.plist and copy REVERSED_CLIENT_ID like com.googleusercontent.apps.....
+    vii)  cordova plugin add cordova-plugin-googleplus --save --variable REVERSED_CLIENT_ID=put your reversed client id.
+
+### Code
+
+``` window.plugins.googleplus.login({
+
+			// 'scopes': 'profile,email ',// optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
+
+			   'webClientId': '338564391857-s0nsjn3l148gqith80rpo0bh9k1b75k1.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
+
+			   'offline': true,
+
+		},
+
+		function (user_data) {
+
+		   Console.log(JSON.stringify(user_data));
+		 },
+
+		function (msg) {
+
+		  console.log(msg);
+
+		 }
+
+		);
+```
+
+### Facebook
+  1) Visit https://developers.facebook.com/apps
+      i)    Create a new apps
+      ii)   Follow this docs https://ionicframework.com/docs/native/facebook
+      iii)  Add platform for android and give ``` Google Play Package Name``` You will find this package name from    config.xml under ```widget``` -> ``` id ```.
