@@ -1,3 +1,0 @@
-# Ionic2MyComponent
-
-## Feature
