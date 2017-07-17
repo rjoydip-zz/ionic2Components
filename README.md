@@ -158,3 +158,5 @@ Example: Requesting external service for here.
       i)    Create a new apps
       ii)   Follow this docs https://ionicframework.com/docs/native/facebook
       iii)  Add platform for android and give ``` Google Play Package Name``` You will find this package name from    config.xml under ```widget``` -> ``` id ```.
+
+That's it :)
