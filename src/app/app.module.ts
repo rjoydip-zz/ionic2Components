@@ -11,6 +11,7 @@ import { MyApp } from './app.component';
 import { LoginComponent } from '../components/auth/login/login';
 import { SignupComponent } from '../components/auth/signup/signup';
 import { ForgotPasswordComponent } from '../components/auth/forgotPass/forgotPass';
+import { SocialLoginComponent } from '../components/auth/social-login/social-login';
 // Pages
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/auth/login/login';
@@ -18,7 +19,10 @@ import { SignupPage } from '../pages/auth/signup/signup';
 import { ForgotPasswordPage } from '../pages/auth/forgot-password/forgot-password';
 // providers
 import { AuthProvider } from '../components/auth/auth.provider';
-import { SocialLoginComponent } from '../components/social-login/social-login';
+// Native module provider
+import { GooglePlus } from '@ionic-native/google-plus';
+import { Facebook } from '@ionic-native/facebook';
+
 
 @NgModule({
   declarations: [
@@ -29,8 +33,8 @@ import { SocialLoginComponent } from '../components/social-login/social-login';
     ForgotPasswordPage,
     LoginComponent,
     SignupComponent,
+    SocialLoginComponent,
     ForgotPasswordComponent,
-    SocialLoginComponent
   ],
   imports: [
     HttpModule,
@@ -51,6 +55,8 @@ import { SocialLoginComponent } from '../components/social-login/social-login';
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthProvider,
+    GooglePlus,
+    Facebook,
   ]
 })
 export class AppModule { }

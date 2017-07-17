@@ -16,6 +16,8 @@ export interface IAuthConfig {
     MOCK_COUNTRIES: boolean,
     GOOGLE_AUTHENTICATION: boolean,
     FACEBOOK_AUTHENTICATION: boolean,
+    TWITTER_AUTHENTICATION: boolean,
+    GITHUB_AUTHENTICATION: boolean,
 }
 
 export interface IAuthClass {

@@ -1,0 +1,87 @@
+{
+  "project_info": {
+    "project_number": "1053414476299",
+    "project_id": "stable-hybrid-173412"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053414476299:android:4cc2e511b5f9084c",
+        "android_client_info": {
+          "package_name": "com.futronics.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1053414476299-pfpl00i9u0mde1r2nr05s6h00k6rgp2m.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1053414476299-ggk40dql62v9uuhc7icg182j4i7mt95r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.futronics.app",
+            "certificate_hash": "777d19bb879621dc5d78946f8eb4a030b156d2f8"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtk-eQixl_Y-AY5Up3FL38HimvACU3fec"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1053414476299:android:2c9024dd51f4aba7",
+        "android_client_info": {
+          "package_name": "com.ionicframework.demo508795"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1053414476299-ulgcagf646csqsiir53m6tn6eeul4nch.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ionicframework.demo508795",
+            "certificate_hash": "777d19bb879621dc5d78946f8eb4a030b156d2f8"
+          }
+        },
+        {
+          "client_id": "1053414476299-pfpl00i9u0mde1r2nr05s6h00k6rgp2m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtk-eQixl_Y-AY5Up3FL38HimvACU3fec"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
