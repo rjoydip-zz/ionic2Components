@@ -15,11 +15,12 @@ export class SocialLoginComponent implements OnInit {
   // @Input() layout: boolean;
   private google: boolean = false;
   private facebook: boolean = false;
+  private twitter: boolean = false;
 
   constructor(
     private platform: Platform,
-    private fb: Facebook,
-    private googlePlus: GooglePlus,
+    // private fb: Facebook,
+    // private googlePlus: GooglePlus,
   ) {
     console.log('Hello SocialLoginComponent Component');
   }
@@ -31,9 +32,20 @@ export class SocialLoginComponent implements OnInit {
 
   fbAuth(): void {
     console.log("Facebook login");
-    this.fb.login(['public_profile', 'user_friends', 'email'])
-        .then((res: FacebookLoginResponse) => alert(JSON.stringify(res)))
-        .catch(e => console.log('Error logging into Facebook', e));
+    if (
+      !(this.platform.is('mobileweb')) &&
+      (
+        this.platform.is('ios') ||
+        this.platform.is('android') ||
+        this.platform.is('cordova')
+      )
+    ) {
+    // this.fb.login(['public_profile', 'user_friends', 'email'])
+    //     .then((res: FacebookLoginResponse) => alert(JSON.stringify(res)))
+    //     .catch(e => console.log('Error logging into Facebook', e));
+    } else {
+      console.log("You are not in currect platform");
+    }
   }
 
   gPlusAuth(): void {
@@ -46,9 +58,9 @@ export class SocialLoginComponent implements OnInit {
         this.platform.is('cordova')
       )
     ) {
-      this.googlePlus.login({})
-        .then(res => alert(JSON.stringify(res)))
-        .catch(err => console.error(err));
+      // this.googlePlus.login({})
+      //   .then(res => alert(JSON.stringify(res)))
+      //   .catch(err => console.error(err));
     } else {
       console.log("You are not in currect platform");
     }

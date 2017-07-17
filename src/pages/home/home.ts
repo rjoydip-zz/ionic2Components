@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-
+// Page
 import { LoginPage } from "../auth/login/login";
 import { SignupPage } from "../auth/signup/signup";
 import { ForgotPasswordPage } from "../auth/forgot-password/forgot-password";
+// Provider
+import { InAppBrowserProvider } from "../../providers/in-app-browser/in-app-browser";
 
 @Component({
   selector: 'page-home',
@@ -12,7 +14,10 @@ import { ForgotPasswordPage } from "../auth/forgot-password/forgot-password";
 
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(
+    public navCtrl: NavController,
+    private iappBp: InAppBrowserProvider
+  ) {
 
   }
 
@@ -24,9 +29,12 @@ export class HomePage {
     this.navCtrl.push(SignupPage);
   }
 
-
   goForgotPassword(): void {
     this.navCtrl.push(ForgotPasswordPage);
+  }
+
+  openBrowser():void{
+    this.iappBp.open();
   }
 
 }

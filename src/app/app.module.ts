@@ -22,6 +22,7 @@ import { AuthProvider } from '../components/auth/auth.provider';
 // Native module provider
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Facebook } from '@ionic-native/facebook';
+import { InAppBrowserProvider } from '../providers/in-app-browser/in-app-browser';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { Facebook } from '@ionic-native/facebook';
     AuthProvider,
     GooglePlus,
     Facebook,
+    InAppBrowserProvider,
   ]
 })
 export class AppModule { }
