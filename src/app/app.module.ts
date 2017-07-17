@@ -18,6 +18,7 @@ import { SignupPage } from '../pages/auth/signup/signup';
 import { ForgotPasswordPage } from '../pages/auth/forgot-password/forgot-password';
 // providers
 import { AuthProvider } from '../components/auth/auth.provider';
+import { SocialLoginComponent } from '../components/social-login/social-login';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AuthProvider } from '../components/auth/auth.provider';
     ForgotPasswordPage,
     LoginComponent,
     SignupComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    SocialLoginComponent
   ],
   imports: [
     HttpModule,

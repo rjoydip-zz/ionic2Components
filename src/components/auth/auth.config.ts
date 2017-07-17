@@ -7,6 +7,8 @@ export let AUTH: IAuthConfig = {
   LOGIN_TITLE: 'Login',
   SIGNUP_TITLE: 'Signup',
   FIREBASE: false,
+  GOOGLE_AUTHENTICATION: true,
+  FACEBOOK_AUTHENTICATION: false,
   PASSWORD_LENGTH: PASSWORD_LENGTH,
   LOGIN_FORM_ERRORS: {
     'email': [],

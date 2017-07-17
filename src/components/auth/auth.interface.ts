@@ -14,6 +14,8 @@ export interface IAuthConfig {
     SIGNUP_VALIDATION_MESSAGE: object,
     FORGOT_VALIDATION_MESSAGE: object,
     MOCK_COUNTRIES: boolean,
+    GOOGLE_AUTHENTICATION: boolean,
+    FACEBOOK_AUTHENTICATION: boolean,
 }
 
 export interface IAuthClass {
