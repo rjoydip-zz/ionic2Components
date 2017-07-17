@@ -111,3 +111,9 @@ Example: Requesting external service for here.
 * Signup
 * Forgot Password
 * Social Login (Google plus, Facebook)
+
+## Social Login Instruction
+
+### Google+
+
+  1) 
