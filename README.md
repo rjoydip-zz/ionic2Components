@@ -2,50 +2,50 @@
 
 ## Folder structure
 
-src
- |
- |---- app
- |
- |---- assets
- |
- |---- components
- |          |
- |          |--- auth
- |                |
- |                |--- data ()
- |                |     |
- |                |     |---- mock.countries.ts
- |                |
- |                |--- forgotPass
- |                |
- |                |--- login
- |                |
- |                |--- signup
- |                |
- |                |--- social-login
- |                |
- |                |--- validators
- |                |
- |                |--- auth.config.ts
- |                |
- |                |--- auth.interface.ts
- |                |
- |                |--- auth.module.ts
- |                |
- |                |--- auth.provider.ts
- |          
- |---- pages
- |
- |---- theme
- |      
- |---- index.html
- |---- manifest.json
- |---- service-worker.js
+``` src
+     |
+     |---- app
+     |
+     |---- assets
+     |
+     |---- components
+     |          |
+     |          |--- auth
+     |                |
+     |                |--- data ()
+     |                |     |
+     |                |     |---- mock.countries.ts
+     |                |
+     |                |--- forgotPass
+     |                |
+     |                |--- login
+     |                |
+     |                |--- signup
+     |                |
+     |                |--- social-login
+     |                |
+     |                |--- validators
+     |                |
+     |                |--- auth.config.ts
+     |                |
+     |                |--- auth.interface.ts
+     |                |
+     |                |--- auth.module.ts
+     |                |
+     |                |--- auth.provider.ts
+     |          
+     |---- pages
+     |
+     |---- theme
+     |      
+     |---- index.html
+     |---- manifest.json
+     |---- service-worker.js
+```
 
 ## File / Folder description inside components
 
-```
-  src -> app -> components -> auth -> data
+```src -> app -> components -> auth -> data
 ```
 
 Example: mock data of country list as array of object format
