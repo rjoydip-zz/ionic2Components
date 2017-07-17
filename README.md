@@ -117,6 +117,7 @@ Example: Requesting external service for here.
 ### Google+
 
   Visit: https://developers.google.com/mobile/add?platform=android&cntapi=signin
+
     i)    Give app name
     ii)   Give Package name like (com.ionicframework.demo508795). You will find this package name from    config.xml under ```widget``` -> ``` id ```.
     iii)  Generate Sha-1 from your pc cmd by using the follwing command.
@@ -129,32 +130,34 @@ Example: Requesting external service for here.
 
 ### Code
 
-``` window.plugins.googleplus.login({
+```
+window.plugins.googleplus.login({
 
-			// 'scopes': 'profile,email ',// optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
+		// 'scopes': 'profile,email ',// optional, space-separated list of scopes, If not included or empty, defaults to `profile` and `email`.
 
-			   'webClientId': '338564391857-s0nsjn3l148gqith80rpo0bh9k1b75k1.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
+		   'webClientId': '338564391857-s0nsjn3l148gqith80rpo0bh9k1b75k1.apps.googleusercontent.com', // optional clientId of your Web application from Credentials settings of your project - On Android, this MUST be included to get an idToken. On iOS, it is not required.
 
-			   'offline': true,
+		   'offline': true,
 
-		},
+	},
 
-		function (user_data) {
+	function (user_data) {
 
-		   Console.log(JSON.stringify(user_data));
-		 },
+	   Console.log(JSON.stringify(user_data));
+	 },
 
-		function (msg) {
+	function (msg) {
 
-		  console.log(msg);
+	  console.log(msg);
 
-		 }
+	 }
 
-		);
+	);
 ```
 
 ### Facebook
   1) Visit https://developers.facebook.com/apps
+  
       i)    Create a new apps
       ii)   Follow this docs https://ionicframework.com/docs/native/facebook
       iii)  Add platform for android and give ``` Google Play Package Name``` You will find this package name from    config.xml under ```widget``` -> ``` id ```.
