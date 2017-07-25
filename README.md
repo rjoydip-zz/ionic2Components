@@ -155,7 +155,7 @@ this.googlePlus = new GooglePlus();
 
 #### * Facebook
 
-Visit https://developers.facebook.com/apps
+Visit ***https://developers.facebook.com/apps***
 
 1. Create a new apps
 2. Follow this docs ***https://ionicframework.com/docs/native/facebook***
