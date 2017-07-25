@@ -83,17 +83,8 @@
     <ion-item>
       <ion-label floating color="primary">Street</ion-label>
       <ion-input type="text" formControlName="street"></ion-input>
-      <ion-input type="text" formControlName="pincode"></ion-input>
-
       <ion-label *ngIf="formErrors.street">
         <div *ngFor="let errors of formErrors.street">
-          <p class="alert">{{ errors }}
-            <p>
-        </div>
-      </ion-label>
-
-      <ion-label *ngIf="formErrors.pincode">
-        <div *ngFor="let errors of formErrors.pincode">
           <p class="alert">{{ errors }}
             <p>
         </div>
@@ -110,6 +101,18 @@
             <p>
         </div>
       </ion-label>
+    </ion-item>
+
+    <ion-item>
+        <ion-label floating color="primary">Pincode</ion-label>
+        <ion-input type="text" formControlName="pincode"></ion-input>
+
+        <ion-label *ngIf="formErrors.pincode">
+          <div *ngFor="let errors of formErrors.pincode">
+            <p class="alert">{{ errors }}
+              <p>
+          </div>
+        </ion-label>
     </ion-item>
 
     <ion-item class="term">

@@ -34,7 +34,10 @@ export let AUTH: IAuthConfig = {
     'email': [],
     'password': [],
     'confirmPassword': [],
-    'phone': []
+    'phone': [],
+    'street': [],
+    'city': [],
+    'pincode': []
   },
   SIGNUP_VALIDATION_MESSAGE: {
     'name': {
@@ -58,7 +61,16 @@ export let AUTH: IAuthConfig = {
     'phone': {
       'required': 'Phone number is required',
       'minlength': `Phone number must be at least ${PHONE_LENGTH} characters long.`
-    }
+    },
+    'street': {
+      'required': 'Street name is required',
+    },
+    'city': {
+      'required': 'City name is required',
+    },
+    'pincode': {
+      'required': 'Pincode is required',
+    },
   },
   FORGOT_FORM_ERRORS: {
     'email': []
