@@ -13,6 +13,7 @@ export let AUTH: IAuthConfig = {
   TWITTER_AUTHENTICATION: false,
   GITHUB_AUTHENTICATION: false,
   PASSWORD_LENGTH: PASSWORD_LENGTH,
+  PHONE_LENGTH: PHONE_LENGTH,
   LOGIN_FORM_ERRORS: {
     'email': [],
     'password': []

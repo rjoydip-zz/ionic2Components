@@ -61,6 +61,8 @@ export class SignupComponent implements OnInit, IAuthClass {
     this.formErrors = AUTH.SIGNUP_FORM_ERRORS;
     this.validationMessages = AUTH.SIGNUP_VALIDATION_MESSAGE;
 
+    console.log(this.countries[0]);
+
     this.signupForm = new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', EmailValidator()),

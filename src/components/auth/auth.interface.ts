@@ -7,6 +7,7 @@ export interface IAuthConfig {
     SIGNUP_TITLE: string,
     COUNTRY_LIST: object,
     PASSWORD_LENGTH: number,
+    PHONE_LENGTH: number,
     LOGIN_FORM_ERRORS: object,
     SIGNUP_FORM_ERRORS: object,
     FORGOT_FORM_ERRORS: object,

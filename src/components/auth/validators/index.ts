@@ -16,6 +16,14 @@ export function PasswordValidator() {
   return Validators.compose([
     Validators.required,
     Validators.pattern('[a-zA-Z0-9]+$'),
-    Validators.minLength(6),
+    Validators.minLength(AUTH.PASSWORD_LENGTH),
+  ]);
+}
+
+// Phone
+export function PhoneValidator() {
+  return Validators.compose([
+    Validators.required,
+    Validators.minLength(AUTH.PHONE_LENGTH),
   ]);
 }
