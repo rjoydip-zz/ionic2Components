@@ -25,5 +25,6 @@ export function PhoneValidator() {
   return Validators.compose([
     Validators.required,
     Validators.minLength(AUTH.PHONE_LENGTH),
+    Validators.maxLength(AUTH.PHONE_LENGTH),
   ]);
 }

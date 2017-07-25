@@ -33,7 +33,8 @@ export let AUTH: IAuthConfig = {
     'name': [],
     'email': [],
     'password': [],
-    'confirmPassword': []
+    'confirmPassword': [],
+    'phone': []
   },
   SIGNUP_VALIDATION_MESSAGE: {
     'name': {

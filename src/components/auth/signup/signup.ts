@@ -11,9 +11,7 @@ import { IAuthClass } from '../auth.interface';
 // Provider
 import { AuthProvider } from '../auth.provider';
 // Validators
-import { EmailValidator, PasswordValidator } from '../validators';
-//Directives
-import { EqualValidator } from '../directives/equal-validators.directive';
+import { EmailValidator, PasswordValidator, PhoneValidator } from '../validators';
 
 
 @Component({
@@ -61,8 +59,6 @@ export class SignupComponent implements OnInit, IAuthClass {
     this.formErrors = AUTH.SIGNUP_FORM_ERRORS;
     this.validationMessages = AUTH.SIGNUP_VALIDATION_MESSAGE;
 
-    console.log(this.countries[0]);
-
     this.signupForm = new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', EmailValidator()),
@@ -70,8 +66,11 @@ export class SignupComponent implements OnInit, IAuthClass {
       gender: new FormControl('male', Validators.required),
       password: new FormControl('', PasswordValidator()),
       confirmPassword: new FormControl('', Validators.required),
-      phone: new FormControl('', Validators.required),
-      agree: new FormControl(false, Validators.required)
+      phone: new FormControl('', PhoneValidator()),
+      agree: new FormControl(false, Validators.required),
+      street: new FormControl('', Validators.required),
+      city: new FormControl('', Validators.required),
+      pincode: new FormControl('', Validators.required),
     });
 
     this.signupForm.valueChanges

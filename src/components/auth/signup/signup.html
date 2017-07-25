@@ -80,6 +80,38 @@
       </ion-label>
     </ion-item>
 
+    <ion-item>
+      <ion-label floating color="primary">Street</ion-label>
+      <ion-input type="text" formControlName="street"></ion-input>
+      <ion-input type="text" formControlName="pincode"></ion-input>
+
+      <ion-label *ngIf="formErrors.street">
+        <div *ngFor="let errors of formErrors.street">
+          <p class="alert">{{ errors }}
+            <p>
+        </div>
+      </ion-label>
+
+      <ion-label *ngIf="formErrors.pincode">
+        <div *ngFor="let errors of formErrors.pincode">
+          <p class="alert">{{ errors }}
+            <p>
+        </div>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating color="primary">City</ion-label>
+      <ion-input type="text" formControlName="city"></ion-input>
+
+      <ion-label *ngIf="formErrors.city">
+        <div *ngFor="let errors of formErrors.city">
+          <p class="alert">{{ errors }}
+            <p>
+        </div>
+      </ion-label>
+    </ion-item>
+
     <ion-item class="term">
       <ion-label class="terms-checkbox-label">I accept terms and conditions</ion-label>
       <ion-checkbox color="primary" formControlName="agree"></ion-checkbox>
