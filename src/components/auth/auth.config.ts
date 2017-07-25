@@ -1,6 +1,7 @@
 import { IAuthConfig } from './auth.interface';
 
 let PASSWORD_LENGTH = 6;
+let PHONE_LENGTH = 10;
 
 export let AUTH: IAuthConfig = {
   TITLE: 'Login And Signup',
@@ -51,6 +52,10 @@ export let AUTH: IAuthConfig = {
       'minlength': `Confirm password must be at least ${PASSWORD_LENGTH} characters long.`,
       'pattern': 'Your password must contain at least one uppercase, one lowercase, and one number.',
       'validateEqual': 'Password mismatch'
+    },
+    'phone': {
+      'required': 'Phone number is required',
+      'minlength': `Phone number must be at least ${PHONE_LENGTH} characters long.`
     }
   },
   FORGOT_FORM_ERRORS: {

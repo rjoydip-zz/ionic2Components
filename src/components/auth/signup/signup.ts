@@ -68,6 +68,7 @@ export class SignupComponent implements OnInit, IAuthClass {
       gender: new FormControl('male', Validators.required),
       password: new FormControl('', PasswordValidator()),
       confirmPassword: new FormControl('', Validators.required),
+      phone: new FormControl('', Validators.required),
       agree: new FormControl(false, Validators.required)
     });
 
