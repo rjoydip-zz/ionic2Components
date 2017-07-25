@@ -19,6 +19,8 @@ import { SignupPage } from '../pages/auth/signup/signup';
 import { ForgotPasswordPage } from '../pages/auth/forgot-password/forgot-password';
 // providers
 import { AuthProvider } from '../components/auth/auth.provider';
+// Directives
+import { EqualValidator } from "../components/auth/directives/equal-validators.directive";
 // Native module provider
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Facebook } from '@ionic-native/facebook';
@@ -36,6 +38,7 @@ import { InAppBrowserProvider } from '../providers/in-app-browser/in-app-browser
     SignupComponent,
     SocialLoginComponent,
     ForgotPasswordComponent,
+    EqualValidator
   ],
   imports: [
     HttpModule,

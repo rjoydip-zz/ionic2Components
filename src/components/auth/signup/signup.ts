@@ -10,6 +10,10 @@ import { AUTH } from '../auth.config';
 import { IAuthClass } from '../auth.interface';
 // Provider
 import { AuthProvider } from '../auth.provider';
+// Validators
+import { EmailValidator, PasswordValidator } from '../validators';
+//Directives
+import { EqualValidator } from '../directives/equal-validators.directive';
 
 
 @Component({
@@ -21,10 +25,9 @@ export class SignupComponent implements OnInit, IAuthClass {
   private title: string;
   private termsAgree: boolean;
   private signupForm: FormGroup;
-  private password_length: number;
   private countries: Array<object> = [];
 
-  private formErrors: object = {};
+  private formErrors: any;
   private validationMessages: object = {};
 
   constructor(
@@ -56,21 +59,14 @@ export class SignupComponent implements OnInit, IAuthClass {
     this.termsAgree = true;
     this.title = AUTH.SIGNUP_TITLE;
     this.formErrors = AUTH.SIGNUP_FORM_ERRORS;
-    this.password_length = AUTH.PASSWORD_LENGTH;
     this.validationMessages = AUTH.SIGNUP_VALIDATION_MESSAGE;
 
     this.signupForm = new FormGroup({
       name: new FormControl('', Validators.required),
-      email: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-      ])),
+      email: new FormControl('', EmailValidator()),
       country: new FormControl(this.countries[0], Validators.required),
       gender: new FormControl('male', Validators.required),
-      password: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.minLength(this.password_length),
-      ])),
+      password: new FormControl('', PasswordValidator()),
       confirmPassword: new FormControl('', Validators.required),
       agree: new FormControl(false, Validators.required)
     });

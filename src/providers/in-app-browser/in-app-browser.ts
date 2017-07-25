@@ -5,6 +5,7 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
 @Injectable()
 export class InAppBrowserProvider {
   private iab: any;
+  
   constructor(
     private platform: Platform
   ) {
@@ -21,7 +22,7 @@ export class InAppBrowserProvider {
       )
     ) {
       this.iab = new InAppBrowser();
-      const browser = this.iab.create('https://ionicframework.com/','_blank', 'location=no');
+      this.iab.create('https://ionicframework.com/','_blank', 'location=no');
     } else {
       console.log("You are not in currect platform");
     }

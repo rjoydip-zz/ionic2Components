@@ -1,10 +1,21 @@
-/**
- * @author    
- * @copyright Copyright (c) 2017
- * @license   
- */
+import { Validators } from '@angular/forms';
 
-export { UsernameValidator } from './username.validator';
-export { EqualValidator } from './password.validator';
-export { CountryValidator } from './country.validator';
-export { PhoneValidator } from './phone.validator';
+// Config
+import { AUTH } from '../auth.config';
+
+// Email
+export function EmailValidator() {
+  return Validators.compose([
+    Validators.required,
+    Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+  ]);
+}
+
+// Password
+export function PasswordValidator() {
+  return Validators.compose([
+    Validators.required,
+    Validators.pattern('[a-zA-Z0-9]+$'),
+    Validators.minLength(6),
+  ]);
+}

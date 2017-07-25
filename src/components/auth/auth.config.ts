@@ -1,6 +1,6 @@
 import { IAuthConfig } from './auth.interface';
 
-let PASSWORD_LENGTH: 6;
+let PASSWORD_LENGTH = 6;
 
 export let AUTH: IAuthConfig = {
   TITLE: 'Login And Signup',

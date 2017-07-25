@@ -9,6 +9,8 @@ import { AUTH } from '../auth.config';
 import { IAuthClass } from '../auth.interface';
 // Provider
 import { AuthProvider } from '../auth.provider';
+// Validators
+import { EmailValidator, PasswordValidator } from '../validators';
 
 @Component({
   selector: 'app-login',
@@ -17,9 +19,8 @@ import { AuthProvider } from '../auth.provider';
 export class LoginComponent implements OnInit, IAuthClass {
 
   private title: string;
+  private formErrors: any;
   private loginForm: FormGroup;
-  private password_length: number;
-  private formErrors: object = {};
   private validationMessages: object = {};
 
   constructor(
@@ -33,31 +34,23 @@ export class LoginComponent implements OnInit, IAuthClass {
     this.initializeValue();
   }
 
-  public onValueChanged(data?: any) {
-    this.showErrorOrValidate();
-  }
-
   public initializeValue(): void {
     this.title = AUTH.LOGIN_TITLE;
     this.formErrors = AUTH.LOGIN_FORM_ERRORS;
-    this.password_length = AUTH.PASSWORD_LENGTH;
     this.validationMessages = AUTH.LOGIN_VALIDATION_MESSAGE;
 
     this.loginForm = new FormGroup({
-      email: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$'),
-      ])),
-      password: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.pattern('[a-zA-Z0-9]+$'),
-        Validators.minLength(this.password_length),
-      ]))
+      email: new FormControl('', EmailValidator()),
+      password: new FormControl('', PasswordValidator())
     });
 
     this.loginForm.valueChanges
       .debounceTime(400)
       .subscribe(data => this.onValueChanged(data));
+  }
+
+  public onValueChanged(data?: any) {
+    this.showErrorOrValidate();
   }
 
   public showErrorOrValidate(): void {

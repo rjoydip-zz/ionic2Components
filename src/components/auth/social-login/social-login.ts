@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
@@ -12,15 +12,14 @@ import { AUTH } from '../auth.config';
 })
 export class SocialLoginComponent implements OnInit {
 
-  // @Input() layout: boolean;
+  private googlePlus: any;
+  private fb: any;
+
   private google: boolean = false;
   private facebook: boolean = false;
-  private twitter: boolean = false;
 
   constructor(
-    private platform: Platform,
-    // private fb: Facebook,
-    // private googlePlus: GooglePlus,
+    private platform: Platform
   ) {
     console.log('Hello SocialLoginComponent Component');
   }
@@ -40,9 +39,10 @@ export class SocialLoginComponent implements OnInit {
         this.platform.is('cordova')
       )
     ) {
-    // this.fb.login(['public_profile', 'user_friends', 'email'])
-    //     .then((res: FacebookLoginResponse) => alert(JSON.stringify(res)))
-    //     .catch(e => console.log('Error logging into Facebook', e));
+    this.fb = new Facebook();
+    this.fb.login(['public_profile', 'user_friends', 'email'])
+        .then((res: FacebookLoginResponse) => alert(JSON.stringify(res)))
+        .catch(e => console.log('Error logging into Facebook', e));
     } else {
       console.log("You are not in currect platform");
     }
@@ -58,9 +58,10 @@ export class SocialLoginComponent implements OnInit {
         this.platform.is('cordova')
       )
     ) {
-      // this.googlePlus.login({})
-      //   .then(res => alert(JSON.stringify(res)))
-      //   .catch(err => console.error(err));
+      this.googlePlus = new GooglePlus();
+      this.googlePlus.login({})
+        .then(res => alert(JSON.stringify(res)))
+        .catch(err => console.error(err));
     } else {
       console.log("You are not in currect platform");
     }
