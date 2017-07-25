@@ -63,6 +63,7 @@ Welcome to my Ionic 2 Component Module
 * Signup
 * Forgot Password
 * Social Login (Google plus, Facebook)
+* Camera
 
 ***File/Folder description***
 
@@ -116,7 +117,10 @@ src -> app -> components -> auth -> auth.provider.ts
 ```
 ***Description:*** Requesting external service for here.
 
-### Social Login Instruction
+Instruction
+===
+
+### Social Login
 
 **NOTE**
 > - Don't put googlePlus or facebook native module as dependency injection. Because it will give a error on browser.Rather than make a instance of that e.g:
@@ -172,6 +176,20 @@ this.fb = new Facebook();
     } else {
       console.log("You are not in currect platform");
     }
+```
+
+### Camera
+
+``` takePicture() and selectPicture()
+```
+
+### Share
+
+``` share() and shareWithOptions()
+```
+
+### Toaster
+``` show()
 ```
 
 That's it :smile: :ok_hand:
