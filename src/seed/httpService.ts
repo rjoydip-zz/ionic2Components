@@ -28,14 +28,14 @@ export class PeopleService {
 
     getAll(): Observable<any> {
         return this.http
-            .get(`${this.baseUrl}/people`, { headers: this.getHeaders() })
+            .get(`${this.baseUrl}/<service_name>`, { headers: this.getHeaders() })
             .map(res => res.json())
             .catch(this.handleError);
     }
 
     get(id: number): Observable<any> {
         return this.http
-            .get(`${this.baseUrl}/people/${id}`, { headers: this.getHeaders() })
+            .get(`${this.baseUrl}/<service_name>/${id}`, { headers: this.getHeaders() })
             .map(res => res.json())
             .catch(this.handleError);
     }
@@ -44,7 +44,7 @@ export class PeopleService {
         // this won't actually work because the StarWars API 
         // is read-only. But it would look like this:
         return this.http
-            .put(`${this.baseUrl}/people/${person.id}`, JSON.stringify(person), { headers: this.getHeaders() })
+            .put(`${this.baseUrl}/<service_name>/${person.id}`, JSON.stringify(person), { headers: this.getHeaders() })
             .catch(this.handleError);
     }
 
