@@ -1,15 +1,25 @@
-This is a funny game type concept for drink people.
+## Ionic2Components
 
-## How to use this
+This is a example project for collection of ionic2 modules,components,directive,providers,services.
 
+### Table of content
 
+ - Login
+ - Signup
+ - Forgot password
+ - In app browser
+ - Loader
+ - Toaster
+ - Camera (only provider file)
+ - Share (only provider file)
+ - Http Service (seed module)
 
 ### How to install :
 
 Clone the repo first:
 
 ```bash
-$ git clone https://github.com/Rjoydip/ionic2-tapp.git
+$ git clone https://github.com/Rjoydip/ionic2MyComponent.git
 ```
 
 Then, to run it, cd into `tapp` and run:
@@ -17,7 +27,7 @@ Then, to run it, cd into `tapp` and run:
 ```bash
 $ ionic serve
 or 
-$ ionic serve -lc //  for lab view
+$ ionic serve -lc // for lab view
 ```
 
 ### Run for android:
