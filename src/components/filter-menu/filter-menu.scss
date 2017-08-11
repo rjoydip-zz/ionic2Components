@@ -1,0 +1,126 @@
+filter-menu {
+    ion-content {
+        margin-top: 60px;
+    }
+    .notification_badge {
+        float: right;
+        z-index: 2;
+        position: absolute;
+        top: 0px;
+        right: -10px;
+        height: 17px;
+        width: 20px;
+        padding: 2px;
+        border-radius: 50%;
+        background-color: color($colors, flamingo);
+    }
+    ion-toolbar {
+        ._menuTitle {
+            font-size: 20px;
+            padding-left: 40px;
+            // display: inline-block;
+        }
+    }
+    ion-select {
+        width: 95%;
+        max-width: 95% !important;
+        border-radius: 20px;
+        border: 0.5px solid #000;
+        margin-bottom: 0px;
+        padding-left: 16px !important;
+        padding-right: 8px !important;
+        padding-top: 5px !important;
+        padding-bottom: 5px !important;
+    }
+    [ion-buttons-end] {
+        .button__pad {
+            margin-right: 12px;
+        }
+    }
+    .ion__filter__button {
+        position: absolute;
+    }
+    .best__deal__container {
+        text-align: center;
+        padding: 12px !important;
+        ion-buttons {
+            margin-top: -40px;
+            button {
+                padding: 10px !important;
+                font-size: 2.8em;
+            }
+        }
+        .best__deal__button {
+            width: 80% !important;
+            margin: 0 auto !important;
+        }
+    }
+    .content-wp {
+        .scroll-content {
+            margin-top: 5px;
+        }
+        margin-top: 45px;
+    }
+    .best__deal__search {
+        padding: 10px !important;
+        .searchbar-ios {
+            border: 2px solid #ccc;
+            border-radius: 25px;
+            min-height: 0 !important;
+            background: none !important;
+        }
+        .searchbar-md {
+            @extend .searchbar-ios;
+            .searchbar-input {
+                box-shadow: none !important;
+            }
+        }
+        .searchbar-wp {
+            @extend .searchbar-ios;
+            .searchbar-input-container {
+                border: none !important;
+            }
+            margin-top: 0px;
+        }
+        .select-wp {
+            margin-top: 0px;
+            margin-bottom: 0px;
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
+        }
+        .label-wp {
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        ion-searchbar {
+            padding: 0 10px;
+            margin-bottom: 15px;
+            margin: -4px 0px;
+        }
+        ion-list {
+            margin-bottom: 0px !important;
+        }
+        .review,
+        .stars,
+        .price {
+            margin-top: -35px;
+            margin-bottom: -35px;
+        }
+        .list-wp {
+            .review,
+            .stars,
+            .price {
+                margin-top: -35px;
+                margin-bottom: -30px;
+            }
+        }
+        .legal__info__go {
+            .item-md {
+                .label-md {
+                    margin-top: -5px !important;
+                    margin-bottom: -5px !important;
+                }
+            }
+        }
+    }
+}

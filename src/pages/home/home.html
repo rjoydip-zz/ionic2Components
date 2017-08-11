@@ -1,5 +1,10 @@
 <ion-header>
     <ion-navbar>
+        <ion-buttons class="menu__buttons_start" start>
+            <button class="menu__icon" ion-button icon-only (click)="openMenu($event)">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        </ion-buttons>
         <ion-title>
             Ionic2 Module collection
         </ion-title>
@@ -29,6 +34,23 @@
     <ion-grid>
         <ion-row>
             <button ion-button (click)="openBrowser()">Open Browser</button>
+        </ion-row>
+    </ion-grid>
+    <hr style="background-color: rgba(21, 20, 20, 1);">
+    <h2 style="text-align: center;">Loader</h2>
+    <ion-grid>
+        <ion-row>
+            <ion-col><button ion-button (click)="loaderDefault()">Default Loader</button></ion-col>
+            <ion-col><button ion-button (click)="loaderCustom()">Custom Loader</button></ion-col>
+            <ion-col><button ion-button (click)="loaderText()">Text Loader</button></ion-col>
+        </ion-row>
+    </ion-grid>
+    <hr style="background-color: rgba(21, 20, 20, 1);">
+    <h2 style="text-align: center;">Toaster</h2>
+    <ion-grid>
+        <ion-row>
+            <ion-col><button ion-button (click)="defaultToaster()">Toaster Default</button></ion-col>
+            <ion-col><button ion-button (click)="topToaster()">Toaster Top</button></ion-col>
         </ion-row>
     </ion-grid>
 </ion-content>

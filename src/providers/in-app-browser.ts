@@ -27,4 +27,5 @@ export class InAppBrowserProvider {
       console.log("You are not in currect platform");
     }
   }
+  
 }

@@ -21,11 +21,17 @@ import { ForgotPasswordPage } from '../pages/auth/forgot-password/forgot-passwor
 import { AuthProvider } from '../components/auth/auth.provider';
 // Directives
 import { EqualValidator } from "../components/auth/directives/equal-validators.directive";
+// Custom Directives
+import { FilterMenuComponentModule } from '../components/filter-menu/filter-menu.module';
 // Native module provider
 import { GooglePlus } from '@ionic-native/google-plus';
 import { Facebook } from '@ionic-native/facebook';
-import { InAppBrowserProvider } from '../providers/in-app-browser/in-app-browser';
+import { InAppBrowserProvider } from '../providers/in-app-browser';
+import { LoaderProvider } from '../providers/loader';
+import { ToasterProvider } from '../providers/toaster';
 
+import { FilterMenuComponent } from "../components/filter-menu/filter-menu";
+import { FilterDataService } from '../components/filter-menu/filter-data.services';
 
 @NgModule({
   declarations: [
@@ -38,7 +44,8 @@ import { InAppBrowserProvider } from '../providers/in-app-browser/in-app-browser
     SignupComponent,
     SocialLoginComponent,
     ForgotPasswordComponent,
-    EqualValidator
+    EqualValidator,
+    FilterMenuComponent
   ],
   imports: [
     HttpModule,
@@ -62,6 +69,10 @@ import { InAppBrowserProvider } from '../providers/in-app-browser/in-app-browser
     GooglePlus,
     Facebook,
     InAppBrowserProvider,
+    LoaderProvider,
+    ToasterProvider,
+    FilterDataService,
+    FilterMenuComponentModule
   ]
 })
 export class AppModule { }

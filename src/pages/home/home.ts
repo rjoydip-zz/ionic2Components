@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController,MenuController } from 'ionic-angular';
 // Page
 import { LoginPage } from "../auth/login/login";
 import { SignupPage } from "../auth/signup/signup";
 import { ForgotPasswordPage } from "../auth/forgot-password/forgot-password";
 // Provider
-import { InAppBrowserProvider } from "../../providers/in-app-browser/in-app-browser";
+import { InAppBrowserProvider } from "../../providers/in-app-browser";
+import { LoaderProvider } from "../../providers/loader";
+import { ToasterProvider } from "../../providers/toaster";
+
+import { platform } from "../../decorators/index.decorator"
 
 @Component({
   selector: 'page-home',
@@ -16,9 +20,16 @@ export class HomePage {
 
   constructor(
     public navCtrl: NavController,
-    private iappBp: InAppBrowserProvider
+    private iappBp: InAppBrowserProvider,
+    private loader: LoaderProvider,
+    private toaster: ToasterProvider,
+    public menuCtrl: MenuController
   ) {
 
+  }
+
+  openMenu($event):void {
+    this.menuCtrl.toggle();
   }
 
   goLogin(): void {
@@ -33,8 +44,39 @@ export class HomePage {
     this.navCtrl.push(ForgotPasswordPage);
   }
 
-  openBrowser():void{
+  openBrowser(): void {
     this.iappBp.open();
+  }
+
+  loaderDefault(): void {
+    platform();
+    this.loader.showLoading('default');
+    setTimeout(() => {
+      this.loader.hideLoading();
+    }, 2000);
+  }
+
+  
+  loaderCustom(): void {
+    this.loader.showLoading('custom');
+    setTimeout(() => {
+      this.loader.hideLoading();
+    }, 2000);
+  }
+
+  loaderText() {
+    this.loader.showLoading('text');
+    setTimeout(() => {
+      this.loader.hideLoading();
+    }, 2000);
+  }
+
+  defaultToaster() {
+    this.toaster.show();
+  }
+
+  topToaster() {
+    this.toaster.show('', 'top');
   }
 
 }

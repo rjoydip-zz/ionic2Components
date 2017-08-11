@@ -1,0 +1,95 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons class="ion__filter__button" start>
+            <button ion-button icon-only menuToggle (click)="openFilter()">
+               <ion-icon ios="ios-options" md="ios-options" wp="ios-options"></ion-icon>
+            </button>
+        </ion-buttons>
+
+        <ion-title class="_menuTitle">Filter</ion-title>
+
+        <ion-buttons ion-buttons-end end>
+            <button ion-button icon-only class="button__pad">
+                <ion-badge class="notification_badge">10</ion-badge>
+                <ion-icon radius-outline ios="ios-notifications-outline" md="ios-notifications-outline" wp="ios-notifications-outline"></ion-icon>
+            </button>
+            <button ion-button icon-only>
+                <ion-icon radius-outline ios="ios-contact-outline" md="ios-contact-outline" wp="ios-contact-outline"></ion-icon>
+            </button>
+        </ion-buttons>
+
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+
+    <div class="best__deal__container" padding>
+        <ion-buttons>
+            <button center ion-button clear icon-only large color="dark" (click)="chooseBestDealOption(1)">
+                <img src="assets/img/man.svg" alt="" [height]="manHeight">
+            </button>
+            <button center ion-button clear icon-only large color="dark" (click)="chooseBestDealOption(2)">
+                <img src="assets/img/woman.svg" alt="" [height]="womanHeight">
+            </button>
+        </ion-buttons>
+        <button class="best__deal__button" ion-button round block small>Best Deal</button>
+    </div>
+
+    <div class="best__deal__search" padding>
+        <ion-searchbar [(ngModel)]="bestDealValue" [spellcheck]="true" [showCancelButton]=false></ion-searchbar>
+
+        <ion-list>
+            <ion-label text-left>Stars</ion-label>
+            <ion-label class="stars">
+                <ion-range debounce="50" snaps="false" dualKnobs="false" pin="true" [(ngModel)]="stars" (ionChange)="onStarsChange($event)" color="manz">
+                    <ion-label range-left>{{stars.lower}}</ion-label>
+                    <ion-label range-right>{{stars.upper}}</ion-label>
+                </ion-range>
+            </ion-label>
+        </ion-list>
+
+        <ion-list>
+            <ion-label text-left>Review</ion-label>
+            <ion-label class="review">
+                <ion-range debounce="50" snaps="false" dualKnobs="false" pin="true" [(ngModel)]="review" (ionChange)="onReviewChange($event)" color="primary">
+                    <ion-label range-left>{{review.lower}}</ion-label>
+                    <ion-label range-right>{{review.upper}}</ion-label>
+                </ion-range>
+            </ion-label>
+        </ion-list>
+
+        <ion-list>
+            <ion-label text-left>Website</ion-label>
+            <ion-item class="website">
+                <ion-select [(ngModel)]="_websiteItem">
+                    <ion-option *ngFor="let websiteItem of websiteItems" [value]="websiteItem">{{websiteItem.name}}</ion-option>
+                </ion-select>
+            </ion-item>
+        </ion-list>
+
+        <ion-list>
+            <ion-label text-left>Price</ion-label>
+            <ion-label class="price">
+                <ion-range debounce="50" snaps="false" dualKnobs="false" pin="true" [(ngModel)]="price" (ionChange)="onPriceChange($event)" color="flamingo">
+                    <ion-label range-left>$ {{price.lower}}</ion-label>
+                    <ion-label range-right>$ {{price.upper}}</ion-label>
+                </ion-range>
+            </ion-label>
+        </ion-list>
+
+        <ion-list>
+            <ion-label text-left>Brand</ion-label>
+            <ion-item class="brand">
+                <ion-select [(ngModel)]="_brandItem">
+                    <ion-option *ngFor="let brandItem of brandItems" [value]="brandItem">{{brandItem.name}}</ion-option>
+                </ion-select>
+            </ion-item>
+        </ion-list>
+
+        <ion-list class="legal__info__go">
+            <ion-item text-center><b>Legal Information</b></ion-item>
+            <button color="chetwode_blue" ion-button full menuToggle (click)="filterData()">GO</button>
+        </ion-list>
+
+    </div>
+
+</ion-content>

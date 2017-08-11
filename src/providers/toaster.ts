@@ -14,7 +14,6 @@ export class ToasterProvider {
       duration: 2000,
       position: position
     });
-
     toast.present();
   }
 
