@@ -1,5 +1,5 @@
-import { Component, OnInit, ElementRef, Renderer } from '@angular/core';
-import { Gesture } from 'ionic-angular';
+import { Component, OnInit, ElementRef, Renderer,EventEmitter,Output } from '@angular/core';
+import { } from 'ionic-angular';
 import { FilterDataService } from "./filter-data.services";
 
 @Component({
@@ -7,8 +7,8 @@ import { FilterDataService } from "./filter-data.services";
   templateUrl: 'filter-menu.html',
 })
 export class FilterMenuComponent implements OnInit {
+  @Output() success: EventEmitter<any> = new EventEmitter();
   // VARIABLE DEFINE
-  private all_model_value: any;
   private sortItems: any[];
   private _sortItem: any;
   private categoryItems: any[];
@@ -17,10 +17,6 @@ export class FilterMenuComponent implements OnInit {
   private _brandItem: any;
   private websiteItems: any[];
   private _websiteItem: any;
-
-  private stars: any = { lower: 1, upper: 5 };
-  private review: any = { lower: 1, upper: 500 };
-  private price: any = { lower: 1, upper: 1000 };
 
   private bestDealOption: number;
   private defaultHeight: number = 60;
@@ -109,7 +105,7 @@ export class FilterMenuComponent implements OnInit {
       website: this._websiteItem,
       category: this._categoryItem
     };
-    console.log(filterDataObject);
+    this.success.emit(filterDataObject);
   }
 
   chooseBestDealOption(type: number): void {

@@ -1,7 +1,7 @@
 <!--<ion-nav [root]="rootPage"></ion-nav>-->
 
 <ion-menu [content]="content">
-    <filter-menu></filter-menu>
+    <filter-menu (success)="onSuccess($event)"></filter-menu>
 </ion-menu>
 
 <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

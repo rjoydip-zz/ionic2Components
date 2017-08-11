@@ -18,5 +18,11 @@ export class MyApp {
       splashScreen.hide();
     });
   }
+
+  onSuccess(event: any){
+    console.log("Directive onSuccess");
+    console.log(event);
+  }
+
 }
 
