@@ -27,9 +27,6 @@ export class FilterMenuComponent implements OnInit {
   private manHeight: number = 0;
   private womanHeight: number = 0;
 
-  private stars_range: any;
-  private stars_handle: any;
-
   constructor(
     private filterDataService: FilterDataService, 
     private elRef: ElementRef,
@@ -37,7 +34,6 @@ export class FilterMenuComponent implements OnInit {
   ) {
     this.manHeight = 60;
     this.womanHeight = ((60 / 2) + 10);
-    console.log('CascadeSearchComponent Component');
   }
 
   ngOnInit(): void {
@@ -46,13 +42,10 @@ export class FilterMenuComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    // this.stars_handle = this.elRef.nativeElement.querySelector('.stars .range-slider .range-knob-handle');
-    // this.stars_range = this.elRef.nativeElement.querySelector('.stars .range');
-    // this.renderer.setElementClass(this.stars_range, 'range-pressed', true);
-    // this.renderer.setElementClass(this.stars_handle, 'range-knob-pressed', true);
+
   }
 
-  private setValue(): void {
+  setValue(): void {
     // GETTING SORT DATA FROM SERVICE
     this.sortItems = this.filterDataService.getSortData();
     // GETTING BRAND DATA FROM SERVICE
@@ -63,7 +56,7 @@ export class FilterMenuComponent implements OnInit {
     this.categoryItems = this.filterDataService.getCategoryData();
   }
 
-  private setDefaultValue(): void {
+  setDefaultValue(): void {
     // SETTING DEFAULT SORT DATA FROM SERVICE
     this._sortItem = this.filterDataService.getSortDefaultData();
     // SETTING DEFAULT BRAND DATA FROM SERVICE
@@ -75,48 +68,51 @@ export class FilterMenuComponent implements OnInit {
   }
 
   // ALL DROP-DOWN ONCHANGE METHODS
-  private onChangeSortDropdown($event): void {
+  onChangeSortDropdown($event): void {
     this._sortItem = this.filterDataService.getSortDataByIndex($event.target.value.split(':')[0]);
   }
-  private onChangeCategoryDropdown($event): void {
+  onChangeCategoryDropdown($event): void {
     this._categoryItem = this.filterDataService.getCategoryDataByIndex($event.target.value.split(':')[0]);
   }
-  private onChangeBrandDropdown($event): void {
+  onChangeBrandDropdown($event): void {
     this._brandItem = this.filterDataService.getBrandDataByIndex($event.target.value.split(':')[0]);;
   }
-  private onChangeWebsiteDropdown($event): void {
+  onChangeWebsiteDropdown($event): void {
     this._websiteItem = this.filterDataService.getWebsiteDataByIndex($event.target.value.split(':')[0]);
   }
 
   // STARS SLIDER CHANGE METHOD
-  private onStarsChange($event): void {
+  onStarsChange($event): void {
 
   }
   // REVIEW SLIDER CHANGE METHOD
-  private onReviewChange($event): void {
+  onReviewChange($event): void {
 
   }
   // PRICE SLIDER CHANGE METHOD
-  private onPriceChange($event): void {
+  onPriceChange($event): void {
     
   }
 
   // RESET ALL DROP-DOWN MODEL AND PRICE RANGER VALUE
-  private resetFilterValue(): void {
+  resetFilterValue(): void {
     this.setDefaultValue();
     console.log("Please clear all filter data", this._sortItem);
   }
 
   // FILTER SEARCH ITEM
-  private filterData(): void {
+  filterData(): void {
     console.log("Filter data");
+    let filterDataObject = {
+      sort: this._sortItem,
+      brand: this._brandItem,
+      website: this._websiteItem,
+      category: this._categoryItem
+    };
+    console.log(filterDataObject);
   }
 
-  private openFilter(): void {
-
-  }
-
-  private chooseBestDealOption(type: number): void {
+  chooseBestDealOption(type: number): void {
     this.bestDealOption = type;
     switch (type) {
       case 1:

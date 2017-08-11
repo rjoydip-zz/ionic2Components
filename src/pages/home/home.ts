@@ -9,8 +9,6 @@ import { InAppBrowserProvider } from "../../providers/in-app-browser";
 import { LoaderProvider } from "../../providers/loader";
 import { ToasterProvider } from "../../providers/toaster";
 
-import { platform } from "../../decorators/index.decorator"
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -49,7 +47,7 @@ export class HomePage {
   }
 
   loaderDefault(): void {
-    platform();
+   
     this.loader.showLoading('default');
     setTimeout(() => {
       this.loader.hideLoading();
