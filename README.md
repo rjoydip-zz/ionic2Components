@@ -19,7 +19,7 @@ This is a example project for collection of ionic2 modules,components,directive,
 Clone the repo first:
 
 ```bash
-$ git clone https://github.com/Rjoydip/ionic2MyComponent.git
+$ git clone https://github.com/Rjoydip/ionic2Components.git
 ```
 
 Then, to run it, cd into `tapp` and run:
